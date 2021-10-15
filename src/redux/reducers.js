@@ -1,14 +1,15 @@
+import * as type from "./actionTypes";
+
 const initialState = {
   users: [],
   user: {},
-  loading: false,
+  loading: true,
 };
 
 const usersReducer = (state = initialState, action) => {
   switch (action.type) {
-    case "":
-      break;
-
+    case type.getUsers:
+      return { ...state, users: action.payload, loading: false };
     default:
       return state;
   }
