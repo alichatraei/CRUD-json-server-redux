@@ -7,6 +7,8 @@ import {
   TableRow,
   TableCell,
   TableHead,
+  ButtonGroup,
+  Button,
 } from "@material-ui/core";
 import { useSelector, useDispatch } from "react-redux";
 import { getUsersDispatch } from "../../redux/actions";
@@ -19,7 +21,7 @@ const MaterialTable = () => {
   }, [dispatch]);
   return (
     <>
-      <TableContainer component={Paper}>
+      <TableContainer component={Paper} style={{ padding: "8px" }}>
         <Table sx={{ maxWidth: 400 }} aria-label="simple table">
           <TableHead>
             <TableRow>
@@ -27,6 +29,7 @@ const MaterialTable = () => {
               <TableCell align="center">Username</TableCell>
               <TableCell align="center">Phone Number</TableCell>
               <TableCell align="center">Sex</TableCell>
+              <TableCell align="center">Actions</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -42,6 +45,17 @@ const MaterialTable = () => {
                   <TableCell align="center">{user.userName}</TableCell>
                   <TableCell align="center">{user.phoneNumber}</TableCell>
                   <TableCell align="center">{user.sex}</TableCell>
+                  <TableCell align="center">
+                    <ButtonGroup
+                      variant="contained"
+                      aria-label="outlined primary button group"
+                    >
+                      <Button color="primary" style={{ marginRight: "8px" }}>
+                        Delete
+                      </Button>
+                      <Button color="secondary">Edit</Button>
+                    </ButtonGroup>
+                  </TableCell>
                 </TableRow>
               ))}
           </TableBody>
