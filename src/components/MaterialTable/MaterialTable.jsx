@@ -11,7 +11,7 @@ import {
   Button,
 } from "@material-ui/core";
 import { useSelector, useDispatch } from "react-redux";
-import { getUsersDispatch } from "../../redux/actions";
+import { getUsersDispatch, removeUser } from "../../redux/actions";
 const MaterialTable = () => {
   const dispatch = useDispatch();
   const { users } = useSelector((state) => state.users);
@@ -19,6 +19,10 @@ const MaterialTable = () => {
   useEffect(() => {
     dispatch(getUsersDispatch());
   }, [dispatch]);
+  const handleDelete = (id) => {
+    window.confirm("Are you sure wanna delete this user?") &&
+      dispatch(removeUser(id));
+  };
   return (
     <>
       <TableContainer component={Paper} style={{ padding: "8px" }}>
@@ -50,7 +54,11 @@ const MaterialTable = () => {
                       variant="contained"
                       aria-label="outlined primary button group"
                     >
-                      <Button color="primary" style={{ marginRight: "8px" }}>
+                      <Button
+                        color="primary"
+                        style={{ marginRight: "8px" }}
+                        onClick={() => handleDelete(user.id)}
+                      >
                         Delete
                       </Button>
                       <Button color="secondary">Edit</Button>

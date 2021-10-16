@@ -6,20 +6,6 @@
       "userName": "Ali Chatraei",
       "phoneNumber": "09337656748",
       "sex": "Male"
-    },
-    {
-      "id": 2,
-      "email": "zahramasoumi@yahoo.com",
-      "userName": "Zahra Masoumi",
-      "phoneNumber": "09337656748",
-      "sex": "Female"
-    },
-    {
-      "id": 3,
-      "email": "rezashekari@yahoo.com",
-      "userName": "RezaShekari",
-      "phoneNumber": "09337656748",
-      "sex": "Male"
     }
   ]
 }
