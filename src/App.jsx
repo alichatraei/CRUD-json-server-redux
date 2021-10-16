@@ -1,5 +1,6 @@
 import { Switch, Route } from "react-router-dom";
 import "./App.css";
+import AddUser from "./pages/AddUser";
 import Home from "./pages/Home";
 
 function App() {
@@ -7,6 +8,7 @@ function App() {
     <div className="App">
       <Switch>
         <Route exact path="/" component={Home} />
+        <Route exact path="/addUser" component={AddUser} />
       </Switch>
     </div>
   );

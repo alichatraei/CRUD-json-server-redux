@@ -18,7 +18,7 @@ const MaterialTable = () => {
   console.log(dispatch, users);
   useEffect(() => {
     dispatch(getUsersDispatch());
-  }, [dispatch]);
+  }, []);
   const handleDelete = (id) => {
     window.confirm("Are you sure wanna delete this user?") &&
       dispatch(removeUser(id));
